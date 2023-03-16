@@ -4,11 +4,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun PlayerScreen(){
+fun PlayerScreen() {
     PlayerGreeting()
 }
 
 @Composable
-fun PlayerGreeting(){
+fun PlayerGreeting() {
     Text(text = "Hello from playerscreen")
 }

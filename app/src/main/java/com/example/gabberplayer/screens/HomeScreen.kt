@@ -1,15 +1,14 @@
 package com.example.gabberplayer.screens
 
-import android.widget.Toast
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun HomeScreen(){
+fun HomeScreen() {
     HomeGreeting()
 }
 
 @Composable
-fun HomeGreeting(){
+fun HomeGreeting() {
     Text(text = "Hello from homescreen")
 }
