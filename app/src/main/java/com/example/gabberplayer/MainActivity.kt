@@ -23,6 +23,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting("Android")
+                    MainScreen()
                 }
             }
         }
@@ -39,5 +40,6 @@ fun Greeting(name: String) {
 fun DefaultPreview() {
     GabberPlayerTheme {
         Greeting("Android")
+        MainScreen()
     }
 }
