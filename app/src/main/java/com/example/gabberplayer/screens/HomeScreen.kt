@@ -1,4 +1,5 @@
 package com.example.gabberplayer.screens
+
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -18,7 +19,6 @@ fun HomeScreen(){
 
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun StationElement(stationName: String, stationDescription: String){
     Card(
@@ -58,9 +58,10 @@ fun StationElementContent(stationName: String,  stationDescription: String) {
 @Composable
 fun StationList(stations: List<Station>) {
     LazyColumn(
-        modifier = Modifier
-            .padding(vertical = 8.dp)){
-        items(items = stations) { station -> StationElement(stationName = station.stationName, station.stationDescription) }
+        modifier = Modifier.padding(vertical = 8.dp))
+    {
+        items(items = stations) { station ->
+            StationElement(stationName = station.stationName, station.stationDescription) }
     }
 }
 
