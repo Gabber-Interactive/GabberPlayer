@@ -27,7 +27,7 @@ import androidx.navigation.compose.rememberNavController
 fun MainScreen() {
     val navController = rememberNavController()
     Scaffold(
-        bottomBar = { BottomBar(navController = navController)}
+        bottomBar = { NavigationBar(navController = navController) }
     ) {
         BottomNavGraph(navController = navController)
     }
@@ -37,7 +37,7 @@ fun MainScreen() {
 
 
 @Composable
-fun BottomBar(navController: NavHostController){
+fun NavigationBar(navController: NavHostController) {
     val screens = listOf(
         BottomNavScreen.Home,
         BottomNavScreen.Player
@@ -46,11 +46,16 @@ fun BottomBar(navController: NavHostController){
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = backStackEntry?.destination
 
-    
-    BottomNavigation() {
-        screens.forEach{screen -> AddItem(screen = screen, currentDestination = currentDestination , navController = navController )}
-    }
+    NavigationBar {
+        screens.forEach { screen ->
+            AddItem(
+                screen = screen,
+                currentDestination = currentDestination,
+                navController = navController
+            )
+        }
 
+    }
 }
 
 @Composable
@@ -58,14 +63,14 @@ fun RowScope.AddItem(
     screen: BottomNavScreen,
     currentDestination: NavDestination?,
     navController: NavHostController
-){
-    BottomNavigationItem(
-        label = { Text(text = screen.title)},
-        icon = { Icon(screen.icon, contentDescription = "Navigation Icon")},
+) {
+    NavigationBarItem(
+        label = { Text(text = screen.title) },
+        icon = { Icon(screen.icon, contentDescription = "Navigation Icon") },
         selected = currentDestination?.hierarchy?.any {
             it.route == screen.route
         } == true,
-        onClick = {navController.navigate(screen.route)}
+        onClick = { navController.navigate(screen.route) }
     )
 }
 

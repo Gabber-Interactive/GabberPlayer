@@ -1,5 +1,4 @@
 package com.example.gabberplayer.screens
-
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -16,6 +15,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun HomeScreen(){
     StationList(stations = stationsList)
+
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
