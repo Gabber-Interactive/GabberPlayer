@@ -29,6 +29,7 @@ fun MainScreen() {
 fun NavigationBar(navController: NavHostController) {
     val screens = listOf(
         BottomNavScreen.Home,
+        BottomNavScreen.Radio,
         BottomNavScreen.Player
     )
 
